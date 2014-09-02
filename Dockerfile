@@ -13,6 +13,9 @@ RUN apt-get -y install default-jdk
 # Install nodejs programs
 RUN apt-get -y install nodejs nodejs-legacy npm
 
+# Install mocha
+RUN npm install -g mocha
+
 # Change the root user's password
 RUN echo "root:password" | chpasswd
 
