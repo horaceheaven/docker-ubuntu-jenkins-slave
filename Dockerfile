@@ -31,4 +31,4 @@ RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pa
 
 EXPOSE 22
 
-ENTRYPOINT /usr/sbin/sshd -D
+CMD ["/usr/sbin/sshd -D"]
