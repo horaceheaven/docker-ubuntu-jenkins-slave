@@ -21,6 +21,7 @@ RUN adduser jenkins
 RUN echo "jenkins:jenkins" | chpasswd
 
 # Configure ssh
+RUN rm /etc/ssh/ssh_host_rsa_key
 RUN mkdir -p /var/run/sshd
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
 RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd
